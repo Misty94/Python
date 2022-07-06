@@ -34,20 +34,61 @@ Create a funtion that, given a list of dictionaries, the function loops through 
 characters = [
     {'first_name': 'Harry', 'last_name': 'Potter'},
     {'first_name': 'Hermione', 'last_name': 'Granger'},
-    {'first_name': 'Ron', 'last_name': 'Weasley'},
+    {'first_name': 'Ron', 'last_name': 'Weasley'}
 ]
+
+def iterateDictionary(some_list):
+    for i in range(len(some_list)):
+        emptyStr = ""
+        for k,v in some_list[i].items():
+            emptyStr += f" {k} - {v}"
+        print(emptyStr)
+
+iterateDictionary(characters)
+    #iterate through the array
+    # get into each dictionary
+    #get the key in that dictionary
+    # for i in range(len(some_list)):
+        # print(i) <- printed the indexes
+        # print(some_list[i]) <- printed each dictionary
+        # print(some_list[i]["first_name"]) <- printed the first names only
+        # for key in some_list:  <- this & below printed out each dictionary * 3
+        #     print(key)
+        # for key in some_list[i]: # <- this & below printed out each key in each dictionary
+            # print(key)
+            # print(some_list[i][key], some_list[i]["first_name"], some_list[i]["last_name"])
+            # print(key)
+            # print(some_list[i]["last_name"])
+            # print(f"(key) ")
+            # for val in some_list[i]:
+            #     print(val)
+    # for i in range(len(data)):
+
+        # for i, j in characters.items(): <- This works for dictionaries
+        #     print(i, j)
+
+
 
 # def iterateDictionary(some_list):
 # def iterateDictionary(some_list):
 #     for i in range(len(some_list)):
 #         for value in some_list[i]
 
-def iterateDictionary(some_list):
-    for i in range(len(characters)):
-        print(i)
-        print('\n'.join("{}: {}".format(k, v) for k, v in characters[i].items()))
+    # Kayla's Help
+# def iterateDictionary(data):
+#     for entry in data:
+#         for key, value in entry.items():
+#             print(key, "-", value)
 
-print(iterateDictionary(characters))
+# iterateDictionary(characters)
+
+    # Google Help
+# def iterateDictionary(some_list):
+#     for i in range(len(characters)):
+#         print(i)
+#         print('\n'.join("{}: {}".format(k, v) for k, v in characters[i].items()))
+
+# print(iterateDictionary(characters))
 
 
 # def iterateDictionary(some_list):
@@ -126,9 +167,12 @@ dojo = {
 }
 def printInfo(some_dict):
     for each_key in some_dict:
-        print(len(each_key), each_key)
-        for i in range(len(each_key)):
-            print()
+        # print(len(each_key), each_key)
+        print(f"{len(some_dict[each_key])} {each_key.upper()}")
+        for val in some_dict[each_key]:
+            print(val)
+        # for i in range(len(each_key)):
+        #     print(["locations"][i])
 
 printInfo(dojo)
 

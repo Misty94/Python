@@ -1,4 +1,4 @@
-# class BankAccount:
+class BankAccount:
 #     all_accounts = []
 
 #     @classmethod

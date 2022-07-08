@@ -7,7 +7,7 @@ class BankAccount:
 #             print()
 
     # don't forget to add some default values for these parameters!
-    def __init__(self, int_rate, balance): 
+    def __init__(self, int_rate=0.01, balance=0): 
         # your code here! (remember, instance attributes go here)
         self.int_rate = int_rate
         self.balance = balance

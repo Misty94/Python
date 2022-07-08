@@ -25,6 +25,13 @@ class BankAccount:
             self.balance += (self.balance * self.int_rate)
         return self
 
+# account_1 = BankAccount(0.01, 987.63)
+
+# account_1.deposit(205).deposit(57.29).deposit(413).withdraw(546.82).yield_interest().display_account_info()
+
+# account_2 = BankAccount(0.05, 654.17)
+
+# account_2.deposit(497.52).deposit(180).withdraw(27.99).withdraw(152.32).withdraw(90.25).withdraw(279.64).yield_interest().display_account_info()
 
 class User:
     def __init__(self, first_name, last_name, email, age):
@@ -32,61 +39,22 @@ class User:
         self.last_name = last_name
         self.email = email
         self.age = age
-        self.is_rewards_member = False
-        self.gold_card_points = 0
         self.account = BankAccount(int_rate=0.02, balance=0)
 
-    def display_info(self):
-        print(f"Name: {self.first_name} {self.last_name}")
-        print(f"Email: {self.email}")
-        print(f"Age: {self.age}")
-        print(f"Rewards Member: {self.is_rewards_member}")
-        print(f"Gold Card Points: {self.gold_card_points}")
-        print(f"Bank Account Balance: {self.account} ")
-
-    def enroll(self):
-        if self.is_rewards_member == True:
-            print("User already a member.")
-            return False
-        else:
-            self.is_rewards_member = True
-            self.gold_card_points = 200
-            return True
-
-    def spend_points(self, amount):
-        if self.gold_card_points > amount:
-            self.gold_card_points -= amount
-        else:
-            print("Sorry, you don't have enough points.")
     
     def make_deposit(self, amount):
-        self.account.deposit(100)
+        self.account.deposit(amount)
         print(self.account.balance)
 
     def make_withdrawal(self, amount):
-        self.account.withdraw()
+        self.account.withdraw(amount)
+        print(self.account.balance)
 
     def display_user_balance(self):
         self.account.display_account_info()
 
-# user_misty = User("Misty", "Strickland", "mms.strickland@gmail.com", 28)
+user_misty = User("Misty", "Strickland", "mms.strickland@gmail.com", 28)
+user_misty.make_deposit(100)
+user_misty.make_withdrawal(27.99)
+user_misty.display_user_balance()
 
-# user_misty.display_info()
-
-
-# user_misty.enroll()
-# user_misty.spend_points(50)
-# user_misty.enroll()
-
-# print("**********************")
-
-# user_harry = User("Harry", "Potter", "hp.hogwarts@gmail.com", 14)
-# user_harry.enroll()
-# user_harry.spend_points(80)
-# user_harry.display_info()
-
-# print("**********************")
-
-# user_elena = User("Elena", "Gilbert", "egilbert@gmail.com", 22)
-# user_elena.display_info()
-# user_elena.spend_points(40)

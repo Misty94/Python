@@ -23,15 +23,18 @@ const expected4 = "";
  * @param {string} str String to be reversed.
  * @returns {string} The given str reversed.
  */
+
 // function reverseString(str) {
-//     //Your code here
-//     return str.split("").reverse().join(""); //.join = creates & returns a new string
-//     // str.split("") - turns the string into an array
-//     // for(var i = 0; i < str.length; i++){
-//     //     var temp = 
-//     // }
+    //Your code here
+    // return str.split("").reverse().join(""); //.join = creates & returns a new string
+    // str.split("") - turns the string into an array
+    // for(var i = 0; i < str.length; i++){
+    //     var temp = 
+    // }
     
 // }
+
+/* Another way of doing it:
 
 function reverseString(str) {
     var newstr = "";
@@ -40,21 +43,25 @@ function reverseString(str) {
     }
     return newstr;
 }
+*/
 
-// function reverseString(str) {
-//     reversed = "";
-//     for (let i = 0; i < str.length; i++) {
-//         reversed = str[i] + reversed;
-//     }
-//     return reversed
-// }
+/* Another way of doing it:
 
-// function reverseString(str) {
-//     var splitString = str.split("")
-//     var reverseArray = splitString.reverse()
-//     var joinArray = reverseArray.join("")
-//     return joinArray
-// }
+function reverseString(str) {
+    reversed = "";
+    for (let i = 0; i < str.length; i++) {
+        reversed = str[i] + reversed;
+    }
+    return reversed
+}
+*/
+
+function reverseString(str) {
+    var splitString = str.split("")
+    var reverseArray = splitString.reverse()
+    var joinArray = reverseArray.join("")
+    return joinArray
+}
 
 
 //TEST CODE FOR REVERSE

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>***Checkerboard***</h1>
+
+    
+    {% for i in range(times) %}
+    <div class="row">
+        {% for j in range(col) %}
+        <div class="color{{ (i+j)%2+1 }}"></div>
+        <!-- <div class="dark-square"></div> -->
+        {% endfor %}
+    </div>
+    {% endfor %}
+    
+    
+    
+    <!-- {% for i in range(times) %}
+    <div class="row">
+        {% for j in range(col) %}
+            <div class="light-square"></div>
+            <div class="dark-square"></div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        {% for j in range(col) %}
+            <div class="dark-square"></div>
+            <div class="light-square"></div>
+        {% endfor %}
+    </div>
+    {% endfor %} -->
+
+    <!-- {% for i in range(times) %}
+    <div class="row"> -->
+        <!-- {% for j in range(times) %} -->
+            <!-- {% if j % 2 == 0 %} -->
+            <!-- <div class="light-square"></div> -->
+            <!-- {% else %} -->
+            <!-- <div class="dark-square"></div> -->
+            <!-- {% endif %}-->
+        <!-- {% endfor %} -->
+    <!-- </div>
+    {% endfor %} -->
+    <!-- {% for i in range(times) %} -->
+    <!-- <div class="row"> -->
+        <!-- {% for j in range(times) %} -->
+            <!-- {% if j % 2 == 0 %} -->
+            <!-- <div class="dark-square"></div> -->
+            <!-- {% else %} -->
+            <!-- <div class="light-square"></div> -->
+            <!-- {% endif %} -->
+        <!-- {% endfor %} -->
+    <!-- </div> -->
+    <!-- {% endfor %} -->
+</body>
+</html>

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect # Import Flask to allow us to create our app
+from flask import Flask, render_template, request, redirect, session # Import Flask to allow us to create our app
 app = Flask(__name__) # Create a new instance of the Flask class called "app"
+app.secret_key = "THIS IS MY SECRET" # there's no secrets on github
 
 # @app.route( '/') # must go above the if statement
 # @app.route( '/login' ) # both of these (if added to URL) will take you to the same place
@@ -93,14 +94,32 @@ Function: create_todo()
 
 @app.route( "/todos")
 def get_todos():
-    return render_template("todos.html", todos = list_of_todos)
+    if "logged_user" not in session:
+        return redirect('/user/login')
+    logged_uid = int(session['logged_user'])
+    user = list_of_users[logged_uid - 1] # simulating getting the user from the database
+
+    # print(type(logged_uid))
+    return render_template("todos.html", todos = list_of_todos, user=user)
 
 @app.route('/todo/form')
 def display_todo_form():
-    return render_template('todo_form.html', users = list_of_users)
+    if "logged_user" not in session:
+        return redirect('/user/login')
+    logged_uid = int(session['logged_user'])
+    user = list_of_users[logged_uid - 1]
+    next_todo_id = len(list_of_todos) + 1
+    return render_template('todo_form.html', users = list_of_users, user=user, id = next_todo_id)
 
 @app.route('/todo/new', methods=['POST'])
 def create_todo():
+    if "logged_user" not in session:
+        return redirect('/user/login')
+        if session['logged_user'] != request.form['hidden']: 
+            return "HEY THAT'S NOT YOU"
+        if int(request.form['id']) != len(list_of_todos) + 1:
+            return "INVALID ID FOR NEXT TODO"
+
     # print(request.form)
     new_todo = {
         "id" : int(request.form['id']),
@@ -110,6 +129,22 @@ def create_todo():
     }
     list_of_todos.append(new_todo)
     return redirect('/todos')
+
+@app.route('/user/process_login', methods=['POST'])
+def process_login():
+    session['logged_user'] = request.form['user_id']
+    return redirect('/todos')
+
+@app.route('/user/login')
+def user_login():
+    return render_template("user_login.html", users = list_of_users)
+
+@app.route('/user/logout')
+def user_logout():
+    deleted_id = session.pop('logged_user') #pop will return the value as well
+    # session.clear() # it clears EVERYTHING in session
+    # del session['logged_user'] # works like pop but it doesn't return anything
+    return redirect('/user/login')
 
 
 

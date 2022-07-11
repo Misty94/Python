@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>New Todo</h1>
+    <h1>New Todo by {{user['first_name']}}</h1>
     <form method="POST" action="">
         <div>
             <label for="description">Description</label>
@@ -35,6 +35,8 @@
                 {% endfor %}
             </select>
         </div>
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="hidden" name="user_id" value="{{session['logged_user']}}">
         <input type="submit" value="Add Todo">
     </form>
 </body>

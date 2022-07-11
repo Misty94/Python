@@ -18,9 +18,9 @@ h1{
     color: orange;
 }
 
-label, input, textarea, select, button{
+/* label, input, textarea, select, button{
     display: block;
-}
+} */
 
 label{
     margin-top: 5px;

@@ -46,6 +46,23 @@ const expected3 = {};
     return frequency;
 }
 
+// Spencer's ~ also line 53 is a ternary
+// function makeFrequencyTable(arr) {
+//     let freq = {};
+//     for (let elem of arr){
+//         freq.hasOwnProperty(elem) ? freq[elem]++ : freq[elem] = 1;
+        //  condition             ?  if true     :    if false
+        /*
+        if (freq.hasOwnProperty(elem)){
+            freq[elem]++
+        } else {
+            freq[elem] = 1
+        }
+        */
+//     }
+//     return freq;
+// }
+
 console.log(makeFrequencyTable(arr1)) 
 console.log("Expected: ", expected1);
 console.log(makeFrequencyTable(arr2)) 

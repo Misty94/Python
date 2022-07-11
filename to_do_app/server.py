@@ -85,8 +85,8 @@ Function: display_todo_form()
 
 Method: POST
 Creating a new type
-URL: '/todo/new
-
+URL: '/todo/new'
+Function: create_todo()
 
 """
 

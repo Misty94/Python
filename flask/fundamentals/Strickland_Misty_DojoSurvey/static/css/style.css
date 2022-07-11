@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    border: 4px solid black;
+    margin: 30px auto;
+    height: 500px;
+    width: 500px;
+    background-color: #33393E;
+    color: white;
+    padding: 20px;
+}
+
+h1{
+    color: orange;
+}
+
+label, input, textarea, select, button{
+    display: block;
+}
+
+label{
+    margin-top: 5px;
+}

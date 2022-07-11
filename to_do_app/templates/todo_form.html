@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Todo</h1>
+    <form method="POST" action="">
+        <div>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="complete">Complete</option>
+                <option value="in_progress">In Progress</option>
+                <option value="cancel">Cancel</option>
+            </select>
+        </div>
+        <div>
+            <label for="id">Todo ID:</label>
+            <input type="number" name="id" id="id">
+        </div>
+        <div>
+            <label for="user_id">User:</label>
+            <select name="user_id" id="user_id">
+                {% for user in users: %}
+                <option value="{{user['id']}}">
+                    {{user['first_name']}} {{user['last_name']}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Add Todo">
+    </form>
+</body>
+</html>

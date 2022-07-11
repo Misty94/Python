@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkerboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    .color1{
+        height: 90px;
+        width: 90px;
+        display: inline-block;
+        margin: 0px;
+        {% if color1 != red %}
+        background-color: {{color1}};
+        {% else %}
+        background-color: red;
+        {% endif %}
+}
+    .color2{
+        height: 90px;
+        width: 90px;
+        display: inline-block;
+        {% if color2 != black %}
+        background-color: {{color2}}
+        {% else %}
+        background-color: black;
+        {% endif %}
+    }
+    </style>
 </head>
 <body>
     <h1>***Checkerboard***</h1>

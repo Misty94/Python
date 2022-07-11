@@ -17,13 +17,12 @@ h1{
     justify-content: center;
 }
 
-.color1{
+/* .color1{
     height: 90px;
     width: 90px;
     display: inline-block;
     background-color: red;
     margin: 0px;
-    /* outline: 5px solid cadetblue; */
 }
 
 .color2{
@@ -31,5 +30,4 @@ h1{
     width: 90px;
     display: inline-block;
     background-color: black;
-    /* outline: 5px solid cadetblue; */
-}
+} */

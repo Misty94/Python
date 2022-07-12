@@ -1,0 +1,30 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    border: 4px solid black;
+    margin: 30px auto;
+    height: 405px;
+    width: 475px;
+    background-color: #33393E;
+    color: white;
+    padding: 30px;
+    font-family: sans-serif;
+}
+
+p:first-of-type{
+    color: skyblue;
+    font-size: 2.5rem;
+}
+
+p{
+    margin-top: 25px;
+}
+
+a{
+    padding-top: 40px;
+    color: skyblue;
+}

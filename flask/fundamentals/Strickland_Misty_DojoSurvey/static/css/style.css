@@ -7,21 +7,58 @@
 #container{
     border: 4px solid black;
     margin: 30px auto;
-    height: 500px;
-    width: 500px;
+    height: 605px;
+    width: 475px;
     background-color: #33393E;
     color: white;
-    padding: 20px;
+    padding: 30px;
+    font-family: sans-serif;
 }
 
 h1{
     color: orange;
+    margin-bottom: 10px;
 }
 
-/* label, input, textarea, select, button{
-    display: block;
-} */
+button{
+    background-color: gold;
+    height: 30px;
+    width: 70px;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
 
-label{
+input, textarea, select{
+    display: block;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+input, select{
+    height: 30px;
+    width: 300px;
+}
+
+#accept_emails{
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+
+#radio{
+    display: flex;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    /* outline: 5px solid hotpink; */
     margin-top: 5px;
+}
+
+#radio > label{
+    /* outline: 5px solid seagreen; */
+    margin: 0px 15px;
+}
+
+#last-p{
+    margin-top: 7px;
 }

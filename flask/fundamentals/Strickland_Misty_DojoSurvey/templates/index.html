@@ -10,34 +10,48 @@
 <body>
     <div id="container">
         <h1>Dojo Survey</h1>
-        <form action="">
+        <form method="POST" action="/process">
             <div>
-                <label for="">Your Name:</label>
-                <input type="text" name="" id="">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name">
             </div>
             <div>
-                <label for="">Dojo Location:</label>
-                <select name="" id="">
-                    <option value="">Miami</option>
-                    <option value="">New York City</option>
-                    <option value="">Atlanta</option>
-                    <option value="">Los Angelos</option>
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="location">
+                    <option value="Miami">Miami</option>
+                    <option value="New York City">New York City</option>
+                    <option value="Atlanta">Atlanta</option>
+                    <option value="Washington DC">Washington DC</option>
                 </select>
             </div>
             <div>
-                <label for="">Favorite Language:</label>
-                <select name="" id="">
-                    <option value="">Python</option>
-                    <option value="">Java</option>
-                    <option value="">MERN</option>
-                    <option value="">C#</option>
+                <label for="language">Favorite Language:</label>
+                <select name="language" id="language">
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="MERN">MERN</option>
+                    <option value="C#">C#</option>
                 </select>
             </div>
             <div>
-                <label for="">Comment (optional):</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button>Submit</button>
+                <label for="comment">Comment (optional):</label>
+                <textarea name="comment" id="comment" cols="38" rows="10"></textarea>
             </div>
+            <p>
+                <input type="checkbox" name="accept_emails" id="accept_emails">
+                <label for="accept_emails">Yes, I would like to recieve periodic email updates.</label>
+            </p>
+            <p id="last-p">How effective was this survey?
+                <div id="radio">
+                    <input type="radio" name="very" id="very">
+                    <label for="very">Very</label>
+                    <input type="radio" name="somewhat" id="somewhat">
+                    <label for="somewhat">Somewhat</label>
+                    <input type="radio" name="ineffective" id="ineffective">
+                    <label for="ineffective">Ineffective</label>
+                </div>
+            </p>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </body>

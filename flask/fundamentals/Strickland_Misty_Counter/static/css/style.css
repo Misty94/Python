@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    margin: 50px auto;
+    height: 200px;
+    width: 500px;
+}
+
+p{
+    font-size: 1.1rem;
+    margin: 20px 40px;
+}
+
+button:first-of-type{
+    background-color: salmon;
+    padding: 7px;
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 4px black;
+}
+
+#last{
+    background-color: lightgreen;
+    padding: 7px;
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 4px black;
+    margin-left: 20px;
+}

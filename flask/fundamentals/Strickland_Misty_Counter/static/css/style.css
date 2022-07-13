@@ -29,3 +29,11 @@ button:first-of-type{
     box-shadow: 2px 2px 4px black;
     margin-left: 20px;
 }
+
+#add{
+    background-color: goldenrod;
+    padding: 7px;
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 4px black;
+    margin-left: 20px;
+}

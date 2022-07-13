@@ -24,5 +24,13 @@ def destroy():
     return redirect('/')
 
 
+@app.route('/addTwo')
+def addingTwo():
+    if 'counts' in session:
+        session['counts'] += 1
+    
+    return redirect('/')
+
+
 if __name__ == "__main__":
     app.run(debug=True)

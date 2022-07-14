@@ -46,7 +46,7 @@ SELECT CONCAT_WS(' ', first_name, last_name, birthday) as 'full_name' FROM users
 SELECT *, LENGTH(handle) as "Handle Length" FROM users;
 
 SELECT id, first_name, last_name, REPLACE(handle, handle, 'SORRY CAN\'T SHOW THIS') as 'Hidden'
-FROM users;
+FROM user
 
 /* SELECT * FROM todos
 JOIN users ON todos.user_id = users.id;

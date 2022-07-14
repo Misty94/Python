@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, session # Import Flask to allow us to create our app
 app = Flask(__name__) # Create a new instance of the Flask class called "app"
 app.secret_key = "THIS IS MY SECRET" # there's no secrets on github
+from todo import Todo
 
 # @app.route( '/') # must go above the if statement
 # @app.route( '/login' ) # both of these (if added to URL) will take you to the same place
@@ -97,6 +98,7 @@ def get_todos():
     if "logged_user" not in session:
         return redirect('/user/login')
     logged_uid = int(session['logged_user'])
+    list_of_todos = Todo.get_all() # running the class method new* so when you refresh browser page, terminal will print out a list of dictionaries that come from the database
     user = list_of_users[logged_uid - 1] # simulating getting the user from the database
 
     # print(type(logged_uid))
@@ -117,17 +119,18 @@ def create_todo():
         return redirect('/user/login')
         if session['logged_user'] != request.form['hidden']: 
             return "HEY THAT'S NOT YOU"
-        if int(request.form['id']) != len(list_of_todos) + 1:
-            return "INVALID ID FOR NEXT TODO"
+        # if int(request.form['id']) != len(list_of_todos) + 1:
+        #     return "INVALID ID FOR NEXT TODO"
 
     # print(request.form)
     new_todo = {
-        "id" : int(request.form['id']),
+        # "id" : int(request.form['id']),
         "description" : request.form['description'],
         "status" : request.form['status'],
-        "user_id" : int(request.form['user_id'])
+        "user_id" : int(request.form['hidden'])
     }
-    list_of_todos.append(new_todo)
+    Todo.create( new_todo )
+    # list_of_todos.append(new_todo)
     return redirect('/todos')
 
 @app.route('/user/process_login', methods=['POST'])

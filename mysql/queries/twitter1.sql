@@ -38,3 +38,30 @@ VALUES ( 'Learn Python', 'complete', 1 ),
 */
 
 
+SELECT *, NOW() as 'Current Time' FROM user; -- only for this time not permantately
+
+SELECT CONCAT(first_name, ' ', last_name) as 'full name' FROM users;
+SELECT CONCAT_WS(' ', first_name, last_name, birthday) as 'full_name' FROM users;
+
+SELECT *, LENGTH(handle) as "Handle Length" FROM users;
+
+SELECT id, first_name, last_name, REPLACE(handle, handle, 'SORRY CAN\'T SHOW THIS') as 'Hidden'
+FROM users;
+
+/* SELECT * FROM todos
+JOIN users ON todos.user_id = users.id;
+
+SELECT * FROM todos
+LEFT JOIN users ON todos.user_id = users.id WHERE first_name = 'Alex' ;
+
+SELECT users.first_name, users.last_name FROM todos.description FROM users
+LEFT JOIN todos ON todos.user_id = users.id WHERE first_name = 'Alex' ;
+*/
+
+/* 
+SELECT * FROM pizzas
+LEFT JOIN pizzas_have_toppings
+ON pizzas.id = pizza_have_toppings.pizza_id
+LEFT JOIN toppings
+ON topping_id = toppings.id;
+*/

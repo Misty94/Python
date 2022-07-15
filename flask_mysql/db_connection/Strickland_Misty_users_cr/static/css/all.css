@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: linear-gradient(to bottom, pink, orange); */
+    background-color: lightgray;
+}
+
+h1{
+    margin: 10px 500px;
+}
+
+/* table{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: thistle;
+} */
+
+thead{
+    border-bottom: 3px dashed black;
+}
+
+th{
+    text-decoration: underline;
+    padding: 15px 120px;
+    font-size: 1.2rem;
+}
+
+td{
+    padding-left: 120px;
+    padding-bottom: 7px;
+}

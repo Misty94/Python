@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    /* outline: 4px solid crimson; */
+    height: 350px;
+    width: 500px;
+    margin: 25px auto;
+}
+
+h1{
+    margin-left: 150px;
+}
+
+input, label, button{
+    display: block;
+    margin: 10px 0px;
+    font-size: 1.2rem;
+}
+
+button{
+    background-color: lightseagreen;
+    color: snow;
+    padding: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+input{
+    width: 500px;
+}

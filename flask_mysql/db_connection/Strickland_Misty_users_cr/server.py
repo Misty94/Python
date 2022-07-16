@@ -21,7 +21,7 @@ def process():
 
     User.save(data)
 
-    return redirect('/user/<int:id>')
+    return redirect('/users')
     
 
 @app.route('/add/user')
@@ -76,14 +76,15 @@ def update_form(id):
         "id": id,
         "first_name": request.form['first_name'],
         "last_name": request.form["last_name"],
-        "email": request.form["email"],
-        "id": id
+        "email": request.form["email"]
     }
+
+    data_id = data['id']
 
     User.update_one(data)
 
 
-    return redirect('/user/<int:id>')
+    return redirect(f'/user/{data_id}')
 
 @app.route('/user/delete/<int:id>')
 def delete_user(id):

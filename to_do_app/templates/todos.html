@@ -10,6 +10,7 @@
     <h1>List of Todos</h1>
     <!-- <h3>Logged in user's id: {{session['logged_user']}}</h3> -->
     <h3>Welcome {{user['first_name']}}</h3>
+    <a href="/user/{{user['id']}}/todos">My todos</a> <!-- {{user['id']}} is talking about the list of dictionaries-->
     <ul>
         {% for todo in todos: %}
             <li>Id: {{todo.id}} Todo: {{todo.description}} Status: {{todo.status}} User ID: {{todo.user_id}}</li>

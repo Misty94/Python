@@ -12,21 +12,25 @@
     <table>
         <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>ID</th>
+                <th>Full Name</th>
                 <th>Email</th>
-                <!-- <th>Created At</th> -->
+                <th>Created At</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for add_one in users %}
             <tr>
-                <td>{{add_one.first_name}}</td>
-                <td>{{add_one.last_name}}</td>
+                <td id="first">{{add_one.id}}</td>
+                <td>{{add_one.first_name}} {{add_one.last_name}}</td>
                 <td>{{add_one.email}}</td>
+                <td>{{add_one.created_at.strftime("%b %d %Y")}}</td>
+                <td><a href="/user/{{add_one.id}}">Show</a> | <a href="/user/edit/{{add_one.id}}">Edit</a> | <a href="/user/delete/{{add_one.id}}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <a href="/add/user" id="footer">Add a New User</a>
 </body>
 </html>

@@ -90,6 +90,16 @@ Creating a new type
 URL: '/todo/new'
 Function: create_todo()
 
+METHOD: PUT (POST)
+Updating an existing item of a particular table
+URL: '/todo/<int:id>/update'
+Function: update_todo(id)
+
+METHOD: DELETE (GET/POST)
+Delete an item from a particular table
+URL: 'todo/<int:id./delete'
+Function: delete_todo(id)
+
 """
 
 
@@ -149,7 +159,16 @@ def user_logout():
     # del session['logged_user'] # works like pop but it doesn't return anything
     return redirect('/user/login')
 
+@app.route( '/todos/<int:id>/update/form')
+def display_todo_update_form(id):
+    #Create a method to grab the current todo
 
+    # return render_template("")
+    pass
+
+@app.route('/todo/<int:id>/update', methods = ['POST'])
+def update_todo(id):
+    pass
 
 
 if __name__=="__main__": #Ensure this file is being run directly and not from a different module

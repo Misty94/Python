@@ -26,11 +26,22 @@ thead{
 
 th{
     text-decoration: underline;
-    padding: 15px 120px;
+    padding: 15px 0px 15px 75px;
     font-size: 1.2rem;
 }
 
 td{
     padding-left: 120px;
-    padding-bottom: 7px;
+    padding-bottom: 15px;
+}
+
+#first{
+    padding-right: 50px;
+}
+
+#footer{
+    /* margin-top: 50px; */
+    padding-left: 120px;
+    font-size: 1.1rem;
+    /* outline: 3px solid cyan; */
 }

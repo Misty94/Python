@@ -1,6 +1,6 @@
 *{
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
@@ -8,21 +8,18 @@
     /* outline: 4px solid crimson; */
     height: 350px;
     width: 500px;
-    margin: 35px auto;
+    margin: 25px auto;
 }
 
 #header{
-    /* outline: 2px solid purple; */
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-    margin-left: 300px;
-    margin-top: 25px;
-    width: 650px;
+    align-items: center;
 }
 
 h1{
-    margin-left: 100px;
+    margin-left: 150px;
+    padding-top: 30px;
 }
 
 input, label, button{
@@ -41,3 +38,8 @@ button{
 input{
     width: 500px;
 }
+
+/* #last{
+    outline: 5px solid crimson;
+    color: black;
+} */

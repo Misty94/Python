@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+    padding: 50px;
+}
+
+#left-col{
+    flex: 1.3;
+}
+
+form{
+    margin-top: 25px;
+}
+
+#right-col{
+    flex: 2;
+}
+
+#links{
+    border: 3px solid black;
+    margin-bottom: 20px;
+    padding: 10px;
+}

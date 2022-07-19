@@ -20,3 +20,15 @@ def adding_new_dojo():
     Dojo.save(data)
 
     return redirect('/dojos')
+
+
+@app.route('/dojos/<int:dojo_id>')
+def show_dojo(dojo_id):
+
+    data = {
+        "id": dojo_id
+    }
+
+    dojo = Dojo.get_one_with_ninjas(data)
+
+    return render_template("show_dojo.html", dojo = dojo)

@@ -26,12 +26,34 @@ class Dojo:
         return result
 
     @classmethod
-    def get_one( cls, data ):
-        query = "SELECT ( ninjas.first_name, ninjas.last_name, ninjas.age ) "
-        query += "FROM ninjas "
-        query += "LEFT JOIN dojos "
+    def get_one_with_ninjas( cls, data ):
+
+        query = "SELECT * "
+        query += "FROM dojos "
+        query += "LEFT JOIN ninjas "
         query += "ON dojos.id = ninjas.dojo_id "
         query += "WHERE dojo_id = %(id)s;"
+        # query = "SELECT ninjas.first_name, ninjas.last_name, ninjas.age "
+        # query += "FROM ninjas "
+        # query += "LEFT JOIN dojos "
+        # query += "ON dojos.id = ninjas.dojo_id "
+        # query += "WHERE dojo_id = %(id)s;"
 
-        result = connectToMySQL( 'dojos_and_ninjas_schema' ).query_db(query)
-        return result
+        result = connectToMySQL( 'dojos_and_ninjas_schema' ).query_db(query, data)
+        
+        dojo = cls(result[0])
+
+        for row_from_db in result:
+
+            ninja_data = {
+                "id": row_from_db["ninjas.id"],
+                "first_name": row_from_db["first_name"],
+                "last_name": row_from_db["last_name"],
+                "age": row_from_db["age"],
+                "created_at": row_from_db["ninjas.created_at"],
+                "updated_at": row_from_db["ninjas.updated_at"]
+            }
+
+            dojo.ninjas.append( Ninja( ninja_data ) )
+
+        return dojo

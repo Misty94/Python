@@ -7,24 +7,27 @@
     <title>All Dojos</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/all_dojos.css') }}">
 </head>
 <body>
-    <div id="left-col">
-        <h2>New Dojo</h2>
-        <form action="">
-            <label for="">Name:</label>
-            <input type="text" name="" id="">
-            <button type="submit">Create</button>
-        </form>
-    </div>
-    <div id="right-col">
-        <h2>All Dojos</h2>
-        <div id="container">
-            <a href="">Seattle</a>
-            <a href="">San Francisco</a>
-            <a href="">Washington DC</a>
+    <div id="container">
+        <div id="left-col">
+            <h2>New Dojo</h2>
+            <form action="/new_dojo" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+                <button type="submit">Create</button>
+            </form>
         </div>
-        <a href="/ninjas">Add Ninja</a>
+        <div id="right-col">
+            <h2>All Dojos</h2>
+            <div id="links">
+                {% for all_dojos in dojos %} {# for showing all dojos in the table dojos #}
+                <p><a href="/dojos/{{all_dojos.id}}">{{all_dojos.name}}</a></p>
+                {% endfor %}
+            </div>
+            <a href="/ninjas">Add Ninja</a>
+        </div>
     </div>
 </body>
 </html>

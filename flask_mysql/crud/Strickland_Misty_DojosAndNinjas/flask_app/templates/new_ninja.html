@@ -10,11 +10,11 @@
 </head>
 <body>
     <h2>New Ninja</h2>
-    <form action="">
+    <form action="/new_ninja" method="POST">
         <label for="dojo_id">Dojo:</label>
         <select name="dojo_id">
             {% for dojo in dojos %}
-            <option value="{{dojo.id}}">{{dojo.name}}</option>
+            <option value={{dojo.id}}>{{dojo.name}}</option>
             {% endfor %}
         </select>
         <label for="first_name">First Name:</label>

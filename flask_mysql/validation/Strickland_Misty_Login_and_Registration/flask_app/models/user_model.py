@@ -20,6 +20,21 @@ class User:
         result = connectToMySQL( DATABASE ).query_db(query, data)
         return result
 
+    @classmethod
+    def get_one_by_email(cls, data):
+        query = "SELECT * "
+        query += "FROM users "
+        query += "WHERE email = %(email)s;"
+
+        result = connectToMySQL( DATABASE ).query_db(query, data)
+
+        # This makes sure that the email is in the database. If it is, set that ...
+        if len(result) > 0:
+            current_user = cls(result[0])
+            return current_user
+        else:
+            return False
+
     @staticmethod
     def validate_user(data):
         is_valid = True
@@ -29,6 +44,12 @@ class User:
             is_valid = False
         if len(data['last_name']) < 2:
             flash("Your last name needs to have at least 2 characters.", "error_registration_last_name")
+            is_valid = False
+        if data['first_name'].isalpha() == False:
+            flash("Your first name can only contain letters.", "error_registration_first_name")
+            is_valid = False
+        if data['last_name'].isalpha() == False:
+            flash("Your last name can only contain letters.", "error_registration_last_name")
             is_valid = False
         if not EMAIL_REGEX.match(data['email']):
             flash("Invalid Email", "error_registration_email")

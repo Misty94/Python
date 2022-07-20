@@ -14,24 +14,45 @@
             <form action="/register/user" method="POST">
                 <label>First Name:</label>
                 <input type="text" name="first_name">
+                {% for message in get_flashed_messages( category_filter = ["error_registration_first_name"] ) %}
+                    {{message}}
+                {% endfor %}
                 <label>Last Name:</label>
                 <input type="text" name="last_name">
+                {% for message in get_flashed_messages( category_filter = ["error_registration_last_name"] ) %}
+                    {{message}}
+                {% endfor %}
                 <label>Email:</label>
                 <input type="email" name="email">
+                {% for message in get_flashed_messages( category_filter = ["error_registration_email"] ) %}
+                    {{message}}
+                {% endfor %}
                 <label>Password:</label>
                 <input type="password" name="password">
+                {% for message in get_flashed_messages( category_filter = ["error_registration_password"] ) %}
+                    {{message}}
+                {% endfor %}
                 <label>Confirm Password:</label>
                 <input type="password" name="password_confirmation">
+                {% for message in get_flashed_messages( category_filter = ["error_registration_password_confirmation"] ) %}
+                    {{message}}
+                {% endfor %}
                 <button type="submit">Register</button>
             </form>
         </div>
         <div id="right-col">
             <h1>Login</h1>
-            <form action="">
+            <form action="/login/user" method="POST">
                 <label>Email:</label>
                 <input type="email" name="email">
+                {% for message in get_flashed_messages( category_filter = ["error_login_email"] ) %}
+                    {{message}}
+                {% endfor %}
                 <label>Password:</label>
                 <input type="password" name="password">
+                {% for message in get_flashed_messages( category_filter = ["error_login_password"] ) %}
+                    {{message}}
+                {% endfor %}
                 <button type="submit">Login</button>
             </form>
         </div>

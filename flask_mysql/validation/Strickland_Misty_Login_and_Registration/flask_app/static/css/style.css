@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+}
+
+#left-col, #right-col{
+    background-color: dimgray;
+}
+
+#left-col{
+    margin: 50px;
+    height: 550px;
+    width: 500px;
+}
+
+#right-col{
+    margin: 50px;
+    height: 315px;
+    width: 500px;
+}
+
+input, label, h1, button{
+    display: block;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+label{
+    font-size: 1.2rem;
+    color: snow;
+}
+
+button{
+    margin-top: 5px;
+}
+
+h1{
+    color: gold;
+}

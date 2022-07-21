@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#container{
+    display: flex;
+    margin: 20px;
+}
+
+#left-col{
+    margin-right: 100px;
+}
+
+/* .space{
+    display: block;
+} */
+
+form{
+    display: flex;
+}
+
+.message{
+    color: crimson;
+}
+
+a{
+    margin-right: 15px;
+}

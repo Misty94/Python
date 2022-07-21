@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#container{
+    border: 3px solid black;
+    padding: 10px;
+}
+
+p{
+    margin: 25px;
+    font-size: 1.2rem;
+}
+
+a{
+    margin-right: 15px;
+}

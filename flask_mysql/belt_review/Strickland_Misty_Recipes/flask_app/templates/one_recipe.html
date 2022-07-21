@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/one.css') }}">
+</head>
+<body>
+    <div id="header">
+        <div id="right-head">
+            <h1>Welcome, {{session['first_name']}}</h1>
+            <h2>{{current_recipe.name}}</h2>
+        </div>
+        <div id="left-head">
+            <a href="/recipes">back to recipes</a>
+            <a href="/logout">logout</a>
+            <p>Posted by: {{current_recipe.user.first_name}}</p>
+        </div>
+    </div>
+    <div id="container">
+        <p>Description: {{current_recipe.description}}</p>
+        <p>Under 30?:
+            {% if current_recipe.under_30 == 1 %}
+            Yes
+            {% else: %}
+            No
+            {% endif %}</p>
+        <p>Instructions: {{current_recipe.instructions}}</p>
+        <p>Date Made: {{current_recipe.date_cooked.strftime("%b %d %Y")}}</p>
+    </div>
+</body>
+</html>

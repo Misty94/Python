@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    display: flex;
+}
+
+#left-col{
+    margin: 50px;
+    width: 450px;
+}
+
+#right-col{
+    margin: 50px;
+    width: 450px;
+}
+
+input, label, h1, button{
+    /* display: block; */
+    padding: 10px;
+    margin-left: 15px;
+}
+
+input{
+    width: 275px;
+    margin-bottom: 10px;
+}
+
+label{
+    font-size: 1.2rem;
+}
+
+button{
+    margin-top: 5px;
+}
+
+h1{
+    color: rebeccapurple;
+}
+
+h2{
+    padding: 5px 5px 20px 5px;
+}
+
+.message{
+    display: block;
+    color: crimson;
+}

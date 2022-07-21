@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+a{
+    margin-right: 5px;
+}

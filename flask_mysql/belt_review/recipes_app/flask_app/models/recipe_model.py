@@ -23,6 +23,15 @@ class Recipe:
         return connectToMySQL( DATABASE ).query_db(query, data)
 
     @classmethod
+    def api_get_all(cls):
+        query = "SELECT * "
+        query += "FROM recipes "
+        query += "JOIN users "
+        query += "ON recipes.user_id = users.id;"
+
+        results = connectToMySQL( DATABASE ).query_db(query) #not finished!!! / not right! / Watch Server as RESTful API and CORS video
+
+    @classmethod
     def get_all_with_users(cls):
         query = "SELECT * "
         query += "FROM recipes "
@@ -108,7 +117,7 @@ class Recipe:
         #     is_valid = False
         if len(data['name']) < 3:
             flash("Name must be at least 3 characters long", "error_recipe_name")
-            is_vailid = False
+            is_valid = False
         if len(data['description']) < 3:
             flash("Description must be at least 3 characters long", "error_recipe_description")
             is_valid = False

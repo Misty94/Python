@@ -68,6 +68,7 @@ def update_recipe(id):
     recipe_data = {
         **request.form,
         "id": id,
+        "user_id": session['user_id']
     }
     Recipe.update_one(recipe_data)
     return redirect('/recipes')

@@ -1,0 +1,13 @@
+.dogImage{
+    width: 300px;
+}
+
+.results{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dogImageContainer{
+    flex-basis: 30%;
+}

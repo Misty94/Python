@@ -55,11 +55,11 @@ console.log(factorial(num2)) // 720
 console.log(factorial(num3)) // 1
 
 /* 
-  Return the fibonacci number at the nth position, recursively.
+Return the fibonacci number at the nth position, recursively.
                     fib(n) = fib(n-1) + fib(n-2)
-  Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-  The next number is found by adding up the two numbers before it,
-  starting with 0 and 1 as the first two numbers of the sequence.
+Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+The next number is found by adding up the two numbers before it,
+starting with 0 and 1 as the first two numbers of the sequence.
 */
 
 const numA = 0;
